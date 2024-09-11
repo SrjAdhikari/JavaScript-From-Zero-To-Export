@@ -52,4 +52,5 @@ const person = {
 console.log(person.calcAge(1995));     // Calls 'calcAge' with the year passed explicitly, returns age for 1995
 console.log(person.calculateAge());    // Calls 'calculateAge', returns age based on 'birthYear' property
 console.log(person.personAge());       // Calls 'personAge', returns age and also sets 'age' property in object
+console.log(person.age);               // Logs the 'age' property of the 'person' object
 console.log(person.getSummary());      // Calls 'getSummary', returns a summary of the person's details
