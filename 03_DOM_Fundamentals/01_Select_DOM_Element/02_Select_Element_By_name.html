@@ -1,0 +1,44 @@
+<!--* ************************************************** -->
+<!--* Select DOM Element By Name -->
+<!--* ************************************************** -->
+
+<!--* getElementsByName(name): Selects all elements with the specified name attribute (returns a live NodeList). Useful for selecting form elements like input, textarea, or select. -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Select DOM Element By Name</title>
+	</head>
+	<body>
+		<h1 id="heading">JavaScript DOM</h1>
+		<p id="paragraph">
+			Learning how to select DOM element by its name attribute in
+			JavaScript.
+		</p>
+		<form>
+			<!-- Radio buttons with the name 'lang' -->
+			<input type="radio" name="lang" value="English" id="english" />
+			English
+			<input type="radio" name="lang" value="Spanish" id="spanish" />
+			Spanish
+			<input type="radio" name="lang" value="French" id="french" /> French
+		</form>
+
+		<!-- Script Section to select DOM element by its name -->
+		<script>
+			// Selecting DOM element by its name
+			const languages = document.getElementsByName("lang");
+
+			// Printing the element selected by name
+			console.log(languages);
+
+			// Printing the value of each radio button
+			console.log(languages[0].value); // Output -> English
+			console.log(languages[1].value); // Output -> Spanish
+			console.log(languages[2].value); // Output -> French
+		</script>
+	</body>
+</html>
