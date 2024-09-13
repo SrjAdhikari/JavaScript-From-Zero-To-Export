@@ -1,0 +1,37 @@
+<!--* ************************************************** -->
+<!--* Select DOM Element By Id  -->
+<!--* ************************************************** -->
+
+<!--* getElementById(id): Selects an element based on its id attribute. Returns the first matching element (as ids should be unique). -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Select DOM Element By Id</title>
+	</head>
+	<body>
+		<h1 id="heading">JavaScript DOM</h1>
+		<p id="paragraph">
+			Learning how to select DOM element by its id attribute in
+			JavaScript.
+		</p>
+
+		<!-- Script Section to select DOM element by its id -->
+		<script>
+			// Selecting DOM element by its id
+			const heading = document.getElementById("heading");
+			const paragraph = document.getElementById("paragraph");
+
+			// Printing the element selected by id
+			console.log(heading);
+			console.log(paragraph);
+
+			// Printing the text content of the element selected by id
+			console.log(heading.textContent); // JavaScript DOM
+			console.log(paragraph.textContent); // Learning how to select DOM element by its id attribute in JavaScript
+		</script>
+	</body>
+</html>
