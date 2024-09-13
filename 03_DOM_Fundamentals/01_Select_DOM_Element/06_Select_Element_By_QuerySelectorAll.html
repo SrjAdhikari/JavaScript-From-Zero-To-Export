@@ -1,0 +1,56 @@
+<!--* ************************************************** -->
+<!--* Select DOM Element By QuerySelectorAll -->
+<!--* ************************************************** -->
+
+<!--* querySelectorAll(selector): Selects all elements that match a CSS selector and returns a NodeList of matching elements. If no element matches, it returns an empty NodeList. -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Select DOM Element By QuerySelector</title>
+	</head>
+	<body>
+		<h1 id="heading">JavaScript DOM</h1>
+		<p id="paragraph">
+			Learning how to select DOM element by queryselectorAll in
+			JavaScript.
+		</p>
+
+		<div id="container">
+			<p id="paragraph">This is second paragraph.</p>
+			<p id="paragraph">This is third paragraph.</p>
+		</div>
+
+		<div>
+			<span>This is first span.</span>
+			<span>This is second span.</span>
+		</div>
+	</body>
+
+	<!-- Script Section to select DOM element by its query selector -->
+	<script>
+		// Selecting Paragraph element by querySelectorAll using id.
+		const para = document.querySelectorAll("#paragraph"); // Selects all paragraph that matches the CSS selector (#paragraph)
+		console.log(para);
+
+		// Selecting all the paragraph element inside the container.
+		const container = document.getElementById("container");
+		const para2 = container.querySelectorAll("#paragraph"); // Selects all paragraph that matches the CSS selector (#paragraph) inside the container
+		console.log(para2);
+
+		// Selecting Div element by querySelectorAll
+		const div = document.querySelectorAll("div"); // Selects all div that matchs the CSS selector (div)
+		console.log(div);
+
+		// Selecting Paragraph element by querySelectorAll using tag name.
+		const paragraph = document.querySelectorAll("p"); // Selects all paragraph that matches the CSS selector (p)
+		console.log(paragraph);
+
+		// Selecting span element by querySelectorAll
+		const span = document.querySelectorAll("span"); // Selects all span that matches the CSS selector (span)
+		console.log(span);
+	</script>
+</html>
