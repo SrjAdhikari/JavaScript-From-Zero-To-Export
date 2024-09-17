@@ -1,0 +1,67 @@
+<!--* ************************************************** -->
+<!--* Manipulate DOM Element By RemoveChild -->
+<!--* ************************************************** -->
+
+<!--* removeChild(): The removeChild() method is used to remove a specified child node from a parent node in the DOM. It removes the child element while keeping the parent node intact. -->
+
+<!--* Syntax: parentNode.removeChild(childNode); -->
+<!--? parentNode: The parent node that contains the child to be removed. -->
+<!--? childNode: The child node that you want to remove. -->
+
+<!--* Key Points: -->
+<!--? The childNode must be a direct child of the parentNode; otherwise, an error will occur. -->
+<!--? The method removes the child node from the DOM but does not delete it permanently—it returns the removed node. -->
+<!--? You can reuse the removed node by appending it somewhere else in the DOM, if needed. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulate DOM Element By RemoveChild</title>
+</head>
+<body>
+    <div id="container">
+        <p id="first">First paragraph.</p>
+        <p id="second">Second paragraph.</p>
+        <p id="third">Third paragraph.</p>
+    </div>
+
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li>Services</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+    </ul>
+
+    <!-- Script Section to manipulate DOM element by removeChild -->
+    <script>
+        // Select the parent container
+        const container = document.getElementById('container');
+        console.log(`Before Removal: ${container.textContent}`);
+
+        // Select the second paragraph (child to be removed)
+        const secondParagraph = document.getElementById('second');
+
+        // Remove the second paragraph from the container
+        container.removeChild(secondParagraph);
+        console.log(`After Removal: ${container.textContent}`);
+
+        //*********************************************************** 
+
+        // Select the element with the id 'menu'
+        let menu = document.querySelector('#menu');
+        console.log(`Before remove: ${menu.textContent}`);
+
+        // Remove the second child element from the 'menu' element
+        menu.removeChild(menu.children[1]);
+        console.log(`After second child remove: ${menu.textContent}`);
+
+        // Remove the last child element from the 'menu' element
+        menu.removeChild(menu.lastElementChild);
+        console.log(`After second and last child remove: ${menu.textContent}`);
+    </script>
+</body>
+</html>
