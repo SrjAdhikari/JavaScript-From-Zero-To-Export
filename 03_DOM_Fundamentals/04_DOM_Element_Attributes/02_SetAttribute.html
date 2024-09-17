@@ -1,0 +1,42 @@
+<!--* ************************************************** -->
+<!--* DOM Element Attribute: setAttribute() -->
+<!--* ************************************************** -->
+
+<!--* setAttribute(): The setAttribute() method is used to set the value of an attribute on an HTML element. If the attribute does not exist, it will be created. -->
+
+<!--* Syntax: element.setAttribute(name, value); -->
+<!--? name: The name of the attribute to set. -->
+<!--? value: The value to assign to the attribute. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Element Attribute: setAttribute()</title>
+</head>
+<body>
+    <button id="sendBtn">
+        Click to Send
+    </button>
+
+    <!-- Script Section to set DOM element attribute -->
+    <script>
+        // Selecting the button element
+        const button = document.getElementById("sendBtn");
+
+        // Set the 'name' attribute of the 'button' element to 'send'
+        button.setAttribute("name", "send");
+
+        // Disable the 'button' element by setting the 'disabled' attribute
+        button.setAttribute("disabled", "true");
+
+        // Set the 'title' attribute of the button element to provide additional information
+        button.setAttribute("title", "Send message to server");
+
+        // Print the button element
+        console.log(button);
+    </script>
+</body>
+</html>
