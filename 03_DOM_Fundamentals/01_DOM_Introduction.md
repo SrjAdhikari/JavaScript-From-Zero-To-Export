@@ -61,9 +61,9 @@ In the DOM tree, elements have parent and child relationships based on how they 
 
 Example:
 <body>
-	<div>
-		<p>Hello World</p>
-	</div>
+    <div>
+	<p>Hello World</p>
+    </div>
 </body>
 
 In the above example, the <body> is the parent of <div>, and <div> is the parent of <p>.
@@ -77,8 +77,8 @@ Nodes that share the same parent are called siblings. In the following example, 
 
 Example:
 <body>
-	<h1>Heading</h1>
-	<p>Paragraph</p>
+    <h1>Heading</h1>
+    <p>Paragraph</p>
 </body>
 ```
 
