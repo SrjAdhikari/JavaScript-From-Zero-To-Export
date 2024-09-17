@@ -1,0 +1,35 @@
+<!--* ************************************************** -->
+<!--* DOM Element Attribute: getAttribute() -->
+<!--* ************************************************** -->
+
+<!--* getAttribute(): The getAttribute() method is used to retrieve the value of a specified attribute from an HTML element. -->
+
+<!--* Syntax: element.getAttribute(name); -->
+<!--? name: The name of the attribute whose value you want to retrieve. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Element Attribute: getAttribute()</title>
+</head>
+<body>
+    <div id="box" class="myClass" data-info="Some data">
+        Content
+    </div>
+
+    <!-- Script Section to get DOM element attribute -->
+    <script>
+        // Selecting the div element
+        const div = document.getElementById("box");
+
+        // Retrieve the attribute value
+        const myClass = div.getAttribute("class");
+        const info = div.getAttribute("data-info");
+        console.log(myClass);   // Output: myClass
+        console.log(info);      // Output: Some data
+    </script>
+</body>
+</html>
