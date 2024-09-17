@@ -1,0 +1,60 @@
+<!--* ************************************************** -->
+<!--* Manipulate DOM Element By AppendChild  -->
+<!--* ************************************************** -->
+
+<!--* textContent: The textContent property is used to get or set the textual content of an element, excluding any HTML tags. It represents the text contained within an element and is a convenient way to manipulate or retrieve text in the DOM.  -->
+
+<!--* Syntax: 
+<!--* Get text content: let text = element.textContent; -->
+<!--* Set text content: element.textContent = 'New text content'; -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Manipulate DOM Element By TextContent</title>
+	</head>
+	<body>
+		<h1>JavaScript DOM</h1>
+		<p>
+			Learning how to select DOM element by its text content in
+			JavaScript.
+		</p>
+
+		<ul id="menu">
+			<li id="home">Home</li>
+			<li>About</li>
+			<li>Contact</li>
+		</ul>
+
+		<!-- Script Section to manipulate DOM element by textContent -->
+		<script>
+			// Select the ul tag (menu)
+			const menu = document.querySelector("#menu");
+
+			// Print the text content of the ul tag
+			console.log(menu.textContent); // Output: Home About Contact
+
+			//**************************************************************
+
+			// Select the first list item
+			const home = document.querySelector("#home");
+
+			// Print the text content of the first list item before change
+			console.log(home.textContent); // Output: Home
+
+			// Change the text content of the first list item
+			home.textContent = "HomePage";
+
+			// Print the text content of the first list item after change
+			console.log(home.textContent); // Output: HomePage
+
+			//**************************************************************
+
+			// Print the text content of the ul tag after change the first item content
+			console.log(menu.textContent); // Output: HomePage About Contact
+		</script>
+	</body>
+</html>
