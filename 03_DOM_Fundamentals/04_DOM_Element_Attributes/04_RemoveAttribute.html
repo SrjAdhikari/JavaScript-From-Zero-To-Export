@@ -1,0 +1,37 @@
+<!--* ************************************************** -->
+<!--* DOM Element Attribute: removeAttribute() -->
+<!--* ************************************************** -->
+
+<!--* removeAttribute(): The removeAttribute() method is used to remove a specified attribute from an HTML element. -->
+
+<!--* Syntax: element.removeAttribute(name); -->
+<!--? name: The name of the attribute to remove. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Element Attribute: removeAttribute()</title>
+</head>
+<body>
+    <div id="box" class="myClass" data-info="Some data">
+        Div Container
+    </div>
+
+    <!-- Script Section to remove DOM element attribute -->
+    <script>
+        // Selecting the div element
+        const div = document.getElementById("box");
+
+        // Remove the attributes
+        div.removeAttribute("data-info");
+        div.removeAttribute("class");
+
+        // Check if the element has attributes after removal
+        console.log(div.hasAttribute("class"));     // Output: false
+        console.log(div.hasAttribute("data-info")); // Output: false
+    </script>
+</body>
+</html>
