@@ -1,0 +1,48 @@
+<!--* ************************************************** -->
+<!--* DOM Element Attribute: style property -->
+<!--* ************************************************** -->
+
+<!--* style.property: The style.property allows us to directly manipulate the inline styles of a DOM element. Here, property represents the CSS property you want to modify, using camelCase notation for JavaScript. -->
+
+<!--* Syntax: element.style.property = value; -->
+<!--? element: The DOM element whose style you want to modify. -->
+<!--? property: The CSS property you want to change, written in camelCase. -->
+<!--? value: The value to set for the specified CSS property. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Element Attribute: style property</title>
+</head>
+<body>
+    <div id="box"></div>
+    <p id="content">JavaScript DOM Fundamentals : Style DOM Element</p>
+
+    <!-- Script Section to style DOM element -->
+    <script>
+        // Selecting the paragraph element
+        const paragraph = document.getElementById("content");
+
+        // Style the paragraph element
+        paragraph.style.color = "red";
+        paragraph.style.backgroundColor = "lightblue";
+        paragraph.style.fontSize = "20px";
+        paragraph.style.padding = "10px";
+        paragraph.style.border = "1px solid black";
+
+
+        // Selecting the div element
+        const box = document.getElementById("box");
+
+        // Style the div element
+        box.style.width = "200px";
+        box.style.height = "200px";
+        box.style.backgroundColor = "lightgreen";
+        box.style.border = '5px solid red';
+        box.style.opacity = '0.5';
+    </script>
+</body>
+</html>
