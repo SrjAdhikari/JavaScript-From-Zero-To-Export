@@ -1,0 +1,43 @@
+<!--* ************************************************** -->
+<!--* Manipulate DOM Element By CreateElement  -->
+<!--* ************************************************** -->
+
+<!--* getElementById(id): The document.createElement() method in JavaScript is used to create a new HTML element. This method is part of the DOM API and allows you to dynamically create elements in your web page. -->
+
+<!--* Syntax: let newElement = document.createElement(tagName); -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Manipulate DOM Element By CreateElement</title>
+	</head>
+	<body>
+		<h1>DOM Manipulation Example</h1>
+		<p id="paragraph">
+			Learning how to manipulate DOM element by createElement in
+			JavaScript.
+		</p>
+
+		<!-- Script Section to manipulate DOM element by createElement -->
+		<script>
+			// Create a new div element
+			const div = document.createElement("div");
+
+			// Set attribute to the new div
+			div.id = "new-div";
+			div.className = "new-class";
+
+			// Set innerHTML of the new div to a paragraph
+			div.innerHTML = "<p>This is new paragraph.</p>";
+
+			// Append the new div to the body
+			document.body.appendChild(div);
+
+			// Print the new div
+			console.log(div);
+		</script>
+	</body>
+</html>
