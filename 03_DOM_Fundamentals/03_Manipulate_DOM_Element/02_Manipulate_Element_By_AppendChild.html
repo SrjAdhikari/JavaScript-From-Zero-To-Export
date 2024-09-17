@@ -1,0 +1,69 @@
+<!--* ************************************************** -->
+<!--* Manipulate DOM Element By AppendChild  -->
+<!--* ************************************************** -->
+
+<!--* appendChild(): The appendChild() method is used to add a new child node to the end of the list of child nodes of a specified parent node.  -->
+<!--* The appendChild() can be used to move an existing child node to a new position within the document. -->
+
+<!--* Syntax: parentNode.appendChild(newChild); -->
+<!--? parentNode: The node to which you want to append the new child. -->
+<!--? newChild: The node to be appended to the parent. -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Manipulate DOM Element By AppendChild</title>
+	</head>
+	<body>
+		<h1>DOM Manipulation Example</h1>
+		<p>
+			Learning how to manipulate DOM element by appendChild in JavaScript.
+		</p>
+
+		<ul id="menu">
+			<li>Home</li>
+			<li>About</li>
+			<li>Blog</li>
+		</ul>
+
+		<ul id="fruit"></ul>
+
+		<!-- Script Section to manipulate DOM element by appendChild -->
+		<script>
+			// Select the ul tag (menu)
+			const menu = document.querySelector("#menu");
+
+			// Create a new list item
+			const newList = document.createElement("li");
+
+			// Set the text of the new list item
+			newList.innerText = "Contact";
+
+			// Append the new list item to the ul tag
+			menu.appendChild(newList);
+
+			//*********************************************************
+
+			// Select the ul tag (fruit)
+			const fruit = document.querySelector("#fruit");
+
+			// Create first list item
+			const firstList = document.createElement("li");
+			firstList.innerText = "Apple";
+			fruit.appendChild(firstList);
+
+			// Create second list item
+			const secondList = document.createElement("li");
+			secondList.innerText = "Banana";
+			fruit.appendChild(secondList);
+
+			// Create third list item
+			const thirdList = document.createElement("li");
+			thirdList.innerText = "Orange";
+			fruit.appendChild(thirdList);
+		</script>
+	</body>
+</html>
