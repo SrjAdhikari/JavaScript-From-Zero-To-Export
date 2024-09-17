@@ -1,0 +1,51 @@
+<!--* ************************************************** -->
+<!--* Manipulate DOM Element By After  -->
+<!--* ************************************************** -->
+
+<!--* after(): TThe after() method is used to insert new content immediately after an existing element in the DOM. This method is part of the modern DOM API and is used to insert one or more nodes or HTML strings.  -->
+
+<!--* To insert multiple nodes after an element, you pass the nodes to the after() method as follows : -->
+<!--* Element.after(node1, node2, ... nodeN) -->
+
+<!--* The after() method also accepts one or more strings. In this case, the after() method treats the strings as Text nodes : -->
+<!--* Element.after(str1, str2, ... strN) -->
+
+<!--* Syntax: element.after(...nodes); -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Manipulate DOM Element By After</title>
+	</head>
+	<body>
+		<h1>DOM Manipulation Example</h1>
+		<p id="paragraph">
+			Learning how to manipulate DOM element by after in JavaScript.
+		</p>
+
+		<div id="content">
+			<p>This is a paragraph.</p>
+		</div>
+
+		<!-- Script Section to manipulate DOM element by after -->
+		<script>
+			// Select the paragraph element
+			const paragraph = document.querySelector("#content p");
+
+			// Create new elements
+			const newDiv = document.createElement("div");
+			newDiv.textContent = "This is a new div.";
+			console.log(newDiv);
+
+			const newSpan = document.createElement("span");
+			newSpan.textContent = "This is a new span.";
+			console.log(newSpan);
+
+			// Insert new elements after the paragraph
+			paragraph.after(newDiv, newSpan);
+		</script>
+	</body>
+</html>
