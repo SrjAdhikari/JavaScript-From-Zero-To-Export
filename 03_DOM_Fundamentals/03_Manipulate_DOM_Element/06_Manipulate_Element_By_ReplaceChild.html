@@ -1,0 +1,63 @@
+<!--* ************************************************** -->
+<!--* Manipulate DOM Element By ReplaceChild -->
+<!--* ************************************************** -->
+
+<!--* replaceChild(): The replaceChild() method is used to replace an existing child node with a new node. -->
+
+<!--* Syntax: parentNode.replaceChild(newChild, oldChild); -->
+<!--? parentNode: The parent node that contains the child to be replaced. -->
+<!--? newChild: The new node that will replace the existing child node. -->
+<!--? oldChild: The existing child node that will be replaced. -->
+
+<!--* Key Points: -->
+<!--? The new node (i.e., newChild) must be a valid Node object. -->
+<!--? The old node (i.e., oldChild) must exist as a child of parentNode, otherwise an error will occur. -->
+<!--? The newChild node is inserted at the same position where the oldChild was located, and the oldChild is removed from the DOM. -->
+<!--? The replaceChild() method returns the replaced node (i.e., oldChild). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulate DOM Element By ReplaceChild</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>HomePage</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    <!-- Script Section to manipulate DOM element by replaceChild -->
+    <script>
+        // Select the element with the id 'menu'
+        let menu = document.querySelector('#menu');
+        console.log(`Before replace: ${menu.textContent}`);
+
+        // Create a new list item element
+        let li = document.createElement('li');
+
+        // Set the text content of the new list item to 'About Us'
+        li.innerText = 'About Us';
+
+        // Replace the third child of the 'menu' element with the newly created list item
+        menu.replaceChild(li, menu.children[2]);
+
+
+        // Create another new list item element
+        li = document.createElement('li');
+
+        // Set the text content of the new list item to 'Home'
+        li.textContent = 'Home';
+        
+        // Replace the first child of the 'menu' element with the newly created list item
+        menu.replaceChild(li, menu.firstElementChild);
+
+        // Print the text content of the 'menu' element
+        console.log(`After replace: ${menu.textContent}`);
+    </script>
+</body>
+</html>
