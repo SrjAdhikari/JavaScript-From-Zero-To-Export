@@ -3,7 +3,8 @@
 ## What is DOM?
 
 ```
-DOM stands for Document Object Model. It is an application programming interface (API) that allows users to create, change, or remove elements from the document. The "DOM" represents an HTML document as a tree of nodes. A node represents an HTML element.
+DOM stands for Document Object Model. It is an application programming interface (API) that allows users to create, change, or remove elements from the document.
+The "DOM" represents an HTML document as a tree of nodes. A node represents an HTML element.
 ```
 
 ## DOM Terminology:
@@ -17,31 +18,37 @@ The document is the root node of the DOM tree. It represents the entire web page
 ### 2. Nodes
 
 ```HTML
-Nodes are the building blocks of the DOM. They are the elements and their attributes. Nodes can be text, comments, or other nodes. The DOM tree is made up of nodes. Nodes can be one of several types:
+Nodes are the building blocks of the DOM. They are the elements and their attributes. Nodes can be text, comments, or other nodes.
+The DOM tree is made up of nodes. Nodes can be one of several types:
 
 Element Node: Represents HTML tags such as <div>, <p>, <span>, etc. Example: The <h1> element in the DOM is an element node.
 
-Attribute Node: Represents the attributes of an element (like class, id, etc.). Example: The class="header" inside an element like <h1 class="header"> is an attribute node.
+Attribute Node: Represents the attributes of an element (like class, id, etc.).
+Example: The class="header" inside an element like <h1 class="header"> is an attribute node.
 
-Text Node: Represents the text inside an element. Each text inside an element (like inside a <p> tag) is a text node. Example: The text "Hello World" inside an <h1> tag is a text node.
+Text Node: Represents the text inside an element. Each text inside an element (like inside a <p> tag) is a text node.
+Example: The text "Hello World" inside an <h1> tag is a text node.
 ```
 
 ### 3. Element
 
 ```HTML
-An element is a specific type of node, representing a single HTML tag and its content. Every tag in your HTML document is an element. For example, <h1>, <div>, <p> are all element nodes.
+An element is a specific type of node, representing a single HTML tag and its content.
+Every tag in your HTML document is an element. For example, <h1>, <div>, <p> are all element nodes.
 ```
 
 ### 4. Attribute
 
 ```
-Each HTML element can have attributes, which provide additional information about the element. Common attributes include id, class, src, href, and alt. Attributes are specified within the opening tag of an HTML element.
+Each HTML element can have attributes, which provide additional information about the element.
+Common attributes include id, class, src, href, and alt. Attributes are specified within the opening tag of an HTML element.
 ```
 
 ### 5. Nodes
 
 ```
-Nodes are the building blocks of the DOM. They are the elements and their attributes. Nodes can be text, comments, or other nodes. The DOM tree is made up of nodes.
+Nodes are the building blocks of the DOM. They are the elements and their attributes.
+Nodes can be text, comments, or other nodes. The DOM tree is made up of nodes.
 ```
 
 ### 6. Parent and Child Nodes
@@ -59,7 +66,8 @@ Example:
 	</div>
 </body>
 
-In the above example, the <body> is the parent of <div>, and <div> is the parent of <p>. Conversely, <p> is a child of <div>, and <div> is a child of <body>.
+In the above example, the <body> is the parent of <div>, and <div> is the parent of <p>.
+Conversely, <p> is a child of <div>, and <div> is a child of <body>.
 ```
 
 ### 7. Siblings
@@ -83,7 +91,8 @@ The root node of the DOM is the topmost node in the tree. In an HTML document, t
 ### 9. Document Object
 
 ```
-The document object is the primary entry point to the DOM which provides methods to select, manipulate, and interact with elements on the page. Example of common DOM methods:
+The document object is the primary entry point to the DOM which provides methods to select, manipulate, and interact with elements on the page.
+Example of common DOM methods:
 
 1. document.getElementById(id): Selects an element by its id attribute.
 2. document.getElementsByClassName(className): Selects all elements with a specific class.
@@ -94,7 +103,8 @@ The document object is the primary entry point to the DOM which provides methods
 ### 10. DOM Manipulation
 
 ```
-DOM manipulation is the process of adding, removing, and modifying elements on the page. Using JavaScript, we can change the DOM and their content. Some common ways to manipulate the DOM include:
+DOM manipulation is the process of adding, removing, and modifying elements on the page.
+Using JavaScript, we can change the DOM and their content. Some common ways to manipulate the DOM include:
 
 1. Create Elements
 2. Modify Content
