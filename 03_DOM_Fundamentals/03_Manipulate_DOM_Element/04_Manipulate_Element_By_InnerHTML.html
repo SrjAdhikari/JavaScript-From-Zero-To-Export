@@ -1,0 +1,42 @@
+<!--* ************************************************** -->
+<!--* Manipulate DOM Element By InnerHTML  -->
+<!--* ************************************************** -->
+
+<!--* innerHTML: The innerHTML property is used to get or set the HTML markup contained within an element. This property allows you to manipulate the HTML structure and content of elements dynamically.  -->
+
+<!--* Syntax: 
+<!--* Get HTML content: let htmlContent = element.innerHTML; -->
+<!--* Set HTML content: element.innerHTML = '<p>New HTML content</p>'; -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Manipulate DOM Element By InnerHTML</title>
+	</head>
+	<body>
+		<h1>JavaScript DOM</h1>
+		<p>Learning how to select DOM element by inner HTML in JavaScript.</p>
+
+		<div id="content">
+			<p>This is a paragraph</p>
+		</div>
+
+		<!-- Script Section to manipulate DOM element by ineerHTML -->
+		<script>
+			// Select the div tag
+			const div = document.querySelector("#content");
+
+			// Print the text content of the div tag
+			console.log(div.innerHTML); // Output: <p>This is a paragraph</p>
+
+			// Change the text content of the div tag
+			div.innerHTML = "<h3>This is a heading</h3>";
+
+			// Print the text content of the div tag after change
+			console.log(div.innerHTML); // Output: <h3>This is a heading</h3>
+		</script>
+	</body>
+</html>
