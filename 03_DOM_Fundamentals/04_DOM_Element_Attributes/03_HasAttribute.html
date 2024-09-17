@@ -1,0 +1,42 @@
+<!--* ************************************************** -->
+<!--* DOM Element Attribute: hasAttribute() -->
+<!--* ************************************************** -->
+
+<!--* hasAttribute(): The hasAttribute() method is used to check if an HTML element has a specified attribute. It returns true if the attribute exists, and false if it does not. -->
+
+<!--* Syntax: element.hasAttribute(name); -->
+<!--? name: The name of the attribute to check for. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Element Attribute: hasAttribute()</title>
+</head>
+<body>
+    <div id="box" class="myClass" data-info="Some data">
+        Div Container
+    </div>
+
+    <!-- Script Section to check DOM element attribute -->
+    <script>
+        // Selecting the div element
+        const div = document.getElementById("box");
+
+        // Check if the element has specific attributes
+        const hasClass = div.hasAttribute("class");
+        console.log(hasClass);  // Output: true
+
+        const hasInfo = div.hasAttribute("data-info");
+        console.log(hasInfo);   // Output: true
+
+        const hasId = div.hasAttribute("id");
+        console.log(hasId);     // Output: false
+
+        const hasStyle = div.hasAttribute("style");
+        console.log(hasStyle);  // Output: false
+    </script>
+</body>
+</html>
