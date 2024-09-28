@@ -8,9 +8,9 @@
 
 
 //* Syntax:
-// for (variable of iterable) {
-//     // code to be executed for each element
-// }
+for (variable of iterable) {
+    // code to be executed for each element
+}
 
 // variable: A new variable that will hold each value of the array (or iterable) during the loop.
 // iterable: The array (or iterable object) to loop over.
