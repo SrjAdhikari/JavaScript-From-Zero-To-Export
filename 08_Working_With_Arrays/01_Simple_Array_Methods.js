@@ -98,7 +98,7 @@ console.log(letters);                   // Output -> [ 'a', 'b', 'c', 'd', 'e' ]
 
 //* ****************************************************
 
-//* 6. slice()
+//* 6. splice()
 // Changes the contents of an array by removing, replacing, or adding elements and returns the removed elements.
 // Syntax: array.splice(startIndex, deleteCount, item1, item2, ...);
 
