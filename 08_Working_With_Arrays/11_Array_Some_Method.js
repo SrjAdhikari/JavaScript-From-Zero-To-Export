@@ -62,4 +62,17 @@ const moneyArray = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const hasDeposits = moneyArray.some( money => money > 0);
 console.log(hasDeposits);     // Output -> true
 
+
+//* *******************************************************
+
+//* Example 4: Find if any product in the list has a price greater than 1000.
+const products = [
+    { name: 'Laptop', price: 1200 },
+    { name: 'Mouse', price: 25 },
+    { name: 'Keyboard', price: 50 }
+];
+
+const hasExpensiveProduct = products.some(product => product.price > 1000);
+console.log(hasExpensiveProduct);       // Output: true
+
 //* ****************************************************
