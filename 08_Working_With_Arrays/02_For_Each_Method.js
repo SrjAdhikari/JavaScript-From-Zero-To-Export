@@ -6,8 +6,14 @@
 //* forEach()
 // The forEach() method is a useful tool when we want to perform an operation on every element in an array without modifying or returning a new array.
 
-// Syntax: array.forEach(callbackFun);
+//* Syntax: array.forEach(function(currentValue, index, array) {........});
+// function: The function to execute on each element.
+// currentValue: The current element being processed.
+// index (optional): The index of the current element.
+// array (optional): The array that forEach() is iterating over.
 
+
+//* ****************************************************
 
 //* Example:
 // 1. Basic Example
