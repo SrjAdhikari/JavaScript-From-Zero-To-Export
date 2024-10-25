@@ -161,3 +161,17 @@ createUsernames(accounts);
 
 
 //* ****************************************************
+
+const updateUI = function (account) {
+    // Display the movements (transactions) of the current account
+    displayMovements(account.movements);
+
+    // Display the total balance of the current account
+    displayTotalBalance(account);
+
+    // Display the total deposits, withdrawals, and calculated interest for the current account
+    displayDepositWithdrawalInterest(account);
+};
+
+
+//* ****************************************************
