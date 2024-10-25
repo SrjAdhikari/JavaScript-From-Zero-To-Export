@@ -175,3 +175,47 @@ const updateUI = function (account) {
 
 
 //* ****************************************************
+
+let currentAccount;
+
+// Event listener for "Login" button
+btnLogin.addEventListener("click", (e) => {
+    // Prevent form from submitting
+    e.preventDefault();
+
+    // Find the account with the matching username
+    currentAccount = accounts.find( acc => acc.username === inputLoginUsername.value);
+
+    // Check if the account exists and the pin matches
+    if (currentAccount?.pin === Number(inputLoginPin.value)) {
+        // Display welcome message with the account owner's name
+        labelWelcome.textContent = `Welcome back, ${
+            currentAccount.owner.split(' ')[0]
+        }`;
+
+        // Display UI elements
+        containerApp.style.opacity = 100;
+
+        // Clear input fields
+        inputLoginUsername.value = inputLoginPin.value = "";
+
+        // Blur the input fields
+        inputLoginPin.blur();
+
+        // Update the UI elements
+        updateUI(currentAccount);
+    }
+    // If login fails, you could reset the input fields or display an error message
+    else {
+        // Clear input fields
+        inputLoginUsername.value = inputLoginPin.value = "";
+
+        // Display an error message
+        labelWelcome.textContent = "Wrong Credentials!";
+        labelWelcome.style.fontSize = "3rem";
+        labelWelcome.style.color = "red";
+    }
+});
+
+
+//* ****************************************************
