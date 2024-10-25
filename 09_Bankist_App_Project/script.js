@@ -109,3 +109,35 @@ const displayTotalBalance = function (account) {
 
 
 //* ****************************************************
+
+// Function to display the total deposits, withdrawals, and calculated interest from movements
+const displayDepositWithdrawalInterest = function (account) {
+    
+    // Calculate the total deposits by filtering out positive movements (deposits)
+    const deposits = account.movements
+        .filter(mov => mov > 0)                 // Keep only positive values (deposits)
+        .reduce((acc, mov) => acc + mov, 0);    // Sum up all deposits using reduce
+    
+    // Calculate the total withdrawals by filtering out negative movements (withdrawals)
+    const withdrawals = account.movements
+        .filter(mov => mov < 0)                 // Keep only negative values (withdrawals)
+        .reduce((acc, mov) => acc + mov, 0);    // Sum up all withdrawals using reduce
+    
+    // Calculate the interest earned from deposits
+    const interest = account.movements
+        .filter(mov => mov > 0)                                     // Filter out only deposits (positive movements)
+        .map(deposit => (deposit * account.interestRate) / 100)     // Apply the interest rate to each deposit
+        .reduce((acc, interest) => acc + interest, 0);              // Sum up all the interest values using reduce
+
+    // Update the UI element to show total deposits with ¥ symbol
+    labelSumIn.innerText = `¥${deposits}`;
+
+    // Update the UI element to show total withdrawals (absolute value, no negative sign)
+    labelSumOut.innerText = `¥${Math.abs(withdrawals)}`;
+
+    // Update the UI element to show total interest earned with ¥ symbol
+    labelSumInterest.innerText = `¥${interest.toFixed(2)}`;
+};
+
+
+//* ****************************************************
