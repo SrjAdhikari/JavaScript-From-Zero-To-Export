@@ -64,3 +64,33 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 
 //* ****************************************************
+
+// Function to display the movements (transactions) in a bank account
+const displayMovements = function (movements) {
+    
+    // Clear any existing HTML inside the container to avoid duplication
+    containerMovements.innerHTML = '';
+
+    // Loop through each movement (transaction) in the array
+    movements.forEach((mov, index) => {
+        // Determine if the movement is a deposit or a withdrawal
+        const movementsType = mov > 0 ? 'deposit' : 'withdrawal';
+
+        // Create a string of HTML to represent a movement row with type and value
+        const movementsHTML = `
+            <div class="movements__row">
+                <!-- Display movement type (deposit or withdrawal) along with its index -->
+                <div class="movements__type movements__type--${movementsType}">${index + 1}. ${movementsType}</div>
+                
+                <!-- Display the value of the movement in euros -->
+                <div class="movements__value">${mov}€</div>
+            </div>
+        `;
+
+        // Insert the newly created HTML for this movement at the beginning of the container
+        containerMovements.insertAdjacentHTML('afterbegin', movementsHTML);
+    });
+};
+
+
+//* ****************************************************
