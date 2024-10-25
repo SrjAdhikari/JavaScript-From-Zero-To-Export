@@ -306,3 +306,15 @@ btnClose.addEventListener("click", (e) => {
 });
 
 //* ****************************************************
+
+let sorted = false;
+btnSort.addEventListener("click", function (e) {
+    // Prevent form from submitting
+    e.preventDefault();
+
+    displayMovements(currentAccount.movements, !sorted);
+
+    sorted = !sorted;
+});
+
+//* ****************************************************
