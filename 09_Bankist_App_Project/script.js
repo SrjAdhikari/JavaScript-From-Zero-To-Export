@@ -255,3 +255,27 @@ btnTransfer.addEventListener("click", (e) => {
 
 
 //* ****************************************************
+
+btnLoan.addEventListener("click", (e) => {
+    // Prevent form from submitting
+    e.preventDefault();
+
+    const amount = Number(inputLoanAmount.value);
+
+    if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+        // Add the loan amount to the current account balance
+        currentAccount.movements.push(amount);
+
+        // Update the UI elements
+        updateUI(currentAccount);
+    }
+
+    // Clear input fields
+    inputLoanAmount.value = "";
+
+    // Blur the input fields
+    inputLoanAmount.blur();
+});
+
+
+//* ****************************************************
