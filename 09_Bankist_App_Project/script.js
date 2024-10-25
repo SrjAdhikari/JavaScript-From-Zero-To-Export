@@ -83,13 +83,28 @@ const displayMovements = function (movements) {
                 <div class="movements__type movements__type--${movementsType}">${index + 1}. ${movementsType}</div>
                 
                 <!-- Display the value of the movement in euros -->
-                <div class="movements__value">${mov}€</div>
+                <div class="movements__value">¥${mov}</div>
             </div>
         `;
 
         // Insert the newly created HTML for this movement at the beginning of the container
         containerMovements.insertAdjacentHTML('afterbegin', movementsHTML);
     });
+};
+
+
+//* ****************************************************
+
+// Function to calculate and display the total balance of all accounts
+const displayTotalBalance = function (account) {
+    // Use the reduce method to sum up all movements (deposits and withdrawals)
+    const balance = account.movements.reduce( (acc, mov) => acc + mov, 0 );
+
+    // Set the calculated balance in the account object
+    account.balance = balance;
+
+    // Update the UI to display the calculated balance in the label with the currency symbol (€)
+    labelBalance.textContent = `¥${balance}`;
 };
 
 
