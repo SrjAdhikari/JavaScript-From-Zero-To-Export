@@ -219,3 +219,39 @@ btnLogin.addEventListener("click", (e) => {
 
 
 //* ****************************************************
+
+// Event listener for "Transfer money" button
+btnTransfer.addEventListener("click", (e) => {
+    // Prevent form from submitting
+    e.preventDefault();
+
+    const amount = Number(inputTransferAmount.value);
+    const receiver = inputTransferTo.value;
+
+    // Find the receiver account with the matching username
+    const receiverAccount = accounts.find( acc => acc.username === receiver);
+    console.log(amount, receiverAccount);
+
+    if (
+        amount > 0 && 
+        receiverAccount && 
+        currentAccount.balance >= amount && 
+        receiverAccount?.username !== currentAccount.username
+    ) {
+        // Transfer the amount to the receiver account
+        currentAccount.movements.push(-amount);
+        receiverAccount.movements.push(amount);
+
+        // Update the UI elements
+        updateUI(currentAccount);
+    }
+
+    // Clear input fields
+    inputTransferAmount.value = inputTransferTo.value = "";
+
+    // Blur the input fields
+    inputTransferAmount.blur();
+});
+
+
+//* ****************************************************
