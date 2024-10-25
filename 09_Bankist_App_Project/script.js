@@ -279,3 +279,30 @@ btnLoan.addEventListener("click", (e) => {
 
 
 //* ****************************************************
+
+// Event listener for "Close account" button
+btnClose.addEventListener("click", (e) => {
+    // Prevent form from submitting
+    e.preventDefault();
+
+    if (
+        inputCloseUsername.value === currentAccount.username && 
+        Number(inputClosePin.value) === currentAccount.pin   
+    ) {
+        const index = accounts.findIndex( acc => acc.username === currentAccount.username);
+
+        // Delete the current account from the accounts array
+        accounts.splice(index, 1);
+
+        // Hide UI elements
+        containerApp.style.opacity = 0;
+    }
+
+    // Clear input fields
+    inputCloseUsername.value = inputClosePin.value = "";
+
+    // Blur the input fields
+    inputClosePin.blur();
+});
+
+//* ****************************************************
