@@ -141,3 +141,23 @@ const displayDepositWithdrawalInterest = function (account) {
 
 
 //* ****************************************************
+
+// Function to create usernames for each account based on the owner's name in the accounts array
+const createUsernames = function(accounts) {
+    // Iterate through each account in the accounts array
+    accounts.forEach(account => {
+        // Create a username by taking the first letter of each part of the owner's name
+        account.username = account.owner
+            .toLowerCase()          // Convert the owner's full name to lowercase
+            .split(' ')             // Split the full name into an array of words (first name, last name)
+            .map(name => name[0])   // Map over each name and extract the first letter of each word
+            .join('');              // Join the first letters together to form the username
+
+        // Log the created username to the console
+        // console.log(`Username created for ${account.owner}: ${account.username}`);
+    });
+};
+createUsernames(accounts);
+
+
+//* ****************************************************
