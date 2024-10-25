@@ -66,13 +66,15 @@ const inputClosePin = document.querySelector('.form__input--pin');
 //* ****************************************************
 
 // Function to display the movements (transactions) in a bank account
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
+    // If sort is true, sort the movements array in ascending order
+    const movementsCopy = sort ? movements.slice().sort((a, b) => a - b) : movements;
     
     // Clear any existing HTML inside the container to avoid duplication
     containerMovements.innerHTML = '';
 
     // Loop through each movement (transaction) in the array
-    movements.forEach((mov, index) => {
+    movementsCopy.forEach((mov, index) => {
         // Determine if the movement is a deposit or a withdrawal
         const movementsType = mov > 0 ? 'deposit' : 'withdrawal';
 
