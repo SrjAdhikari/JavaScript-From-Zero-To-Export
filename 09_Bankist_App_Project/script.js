@@ -227,10 +227,50 @@ const updateUI = function (account) {
     displayDepositWithdrawalInterest(account);
 };
 
+// Function to start the logout timer for auto-logout after a period of inactivity
+const startLogOutTimer = function () {
+    // Function to handle countdown and display time remaining
+    const ticktack = function () {
+        // Calculate remaining minutes and seconds, adding leading zeros if needed
+        const min = String(Math.trunc(time / 60)).padStart(2, 0);
+        const sec = String(time % 60).padStart(2, 0);
+
+        // Update the UI to show remaining time in 'MM:SS' format
+        labelTimer.textContent = `${min}:${sec}`;
+
+        
+        // When the timer reaches 0, stop the timer and log out
+        // Check if the timer has reached zero
+        if (time === 0) {
+            // Stop the countdown interval
+            clearInterval(timer);
+
+            // Display log-in prompt and hide app container (log out the user)
+            labelWelcome.textContent = "Log in to get started";
+            containerApp.style.opacity = 0;
+        }
+
+        // Reduce time by 1 second for the next tick
+        time--;
+    };
+
+    // Set up a timer to log out after 5 minutes of inactivity
+    let time = 300;
+
+    // Start the timer immediately to avoid 1-second delay
+    ticktack();
+
+    // Call ticktack function every second to update the timer display
+    const timer = setInterval(ticktack, 1000);
+
+    // Return the timer interval ID to allow further control if needed
+    return timer;
+};
+
 
 //* ****************************************************
 
-let currentAccount;
+let currentAccount, timer;
 
 // Event listener for "Login" button
 btnLogin.addEventListener("click", (e) => {
@@ -265,6 +305,13 @@ btnLogin.addEventListener("click", (e) => {
 
         // Blur the input fields
         inputLoginPin.blur();
+
+        // Check if a logout timer already exists and reset it to prevent multiple timers
+        if(timer) 
+            clearInterval(timer);
+
+        // Start a new logout timer for the current session
+        timer = startLogOutTimer();
 
         // Update the UI elements
         updateUI(currentAccount);
@@ -312,6 +359,13 @@ btnTransfer.addEventListener("click", (e) => {
 
         // Update the UI elements
         updateUI(currentAccount);
+
+        // If user activity occurs during the timer countdown, reset the timer
+        // Clear the existing timer to prevent premature logout due to recent activity
+        clearInterval(timer);
+
+        // Start a new logout timer to refresh the 5-minute inactivity period
+        timer = startLogOutTimer();
     }
 
     // Clear input fields
@@ -339,6 +393,13 @@ btnLoan.addEventListener("click", (e) => {
 
         // Update the UI elements
         updateUI(currentAccount);
+
+        // If user activity occurs during the timer countdown, reset the timer
+        // Clear the existing timer to prevent premature logout due to recent activity
+        clearInterval(timer);
+
+        // Start a new logout timer to refresh the 5-minute inactivity period
+        timer = startLogOutTimer();
     }
 
     // Clear input fields
